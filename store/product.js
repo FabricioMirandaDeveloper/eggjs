@@ -28,6 +28,13 @@ class Product {
     }
     set setSupplier(newName) {
         this._supplier = newName;
+    }
+    sellUnits(units) {
+    if(this.stock < units) {
+        console.log("No hay la cantidad de productos suficientes")
+    }else {
+        this.stock = this.stock - units
+    }
     }     
 }
 
@@ -43,3 +50,7 @@ console.log(prod3.onsale);
 const prod4 = new Product("01478","Cuates",1,40,"https://i.postimg.cc/Jn2C5W84/galaxy1.webp)", false, "Frito Lays")
 prod4.setSupplier ="Alicorp"
 console.log(prod4.getSupplier)
+const prod5 = new Product("03636","Doritos",2,12,[], false, "Bombo SAC")
+console.log(prod5.stock);
+prod5.sellUnits(13)
+console.log(prod5.stock);
