@@ -14,7 +14,7 @@ console.log(produto1.nombre);
 /* ESTO ES UNA CLASE
  */
 class Product {
-    constructor(id, title, price, stock, images, onsale, supplier) {
+    constructor(id, title, price, stock, images, onsale, supplier, colors, description) {
         this.id = id
         this.title = title
         this.price = price
@@ -22,6 +22,8 @@ class Product {
         this.images = images
         this.onsale = onsale
         this._supplier = supplier;
+        this.colors = colors
+        this.description = description
     } 
     get getSupplier() {
         return this._supplier;
@@ -40,7 +42,7 @@ class Product {
 
 const prod1 = new Product()
 const prod2 = new Product("01567","Leche", 2.5)
-const prod3 = new Product("01568", "Toallitas Humedas", 7, 20, "https://i.postimg.cc/Jn2C5W84/galaxy1.webp", true)
+const prod3 = new Product("01568", "Toallitas Humedas", 7, 20, "https://i.postimg.cc/Jn2C5W84/galaxy1.webp", true, "BabySec", "Celeste", )
 console.log("--------------");
 console.log("--------------");
 console.log("--------------");
