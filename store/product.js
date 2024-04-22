@@ -14,7 +14,7 @@ console.log(produto1.nombre) */;
 /* ESTO ES UNA CLASE
  */
 class Product {
-    constructor(id, title, price, stock, images, onsale, supplier) {
+    constructor(id, title, price, stock, images, onsale, supplier, colors, description) {
         this.id = id
         this.title = title
         this.price = price
@@ -22,6 +22,8 @@ class Product {
         this.images = images
         this.onsale = onsale
         this._supplier = supplier;
+        this.colors = colors
+        this.description = description
     } 
     get getSupplier() {
         return this._supplier;
@@ -40,7 +42,10 @@ class Product {
 
 const prod1 = new Product()
 const prod2 = new Product("01567","Leche", 2.5)
-const prod3= new Product("01568", "Toallitas Humedas", 7, 20, "https://i.postimg.cc/Jn2C5W84/galaxy1.webp", true)
+const prod3 = new Product("01568", "Toallitas Humedas", 7, 20, "https://i.postimg.cc/Jn2C5W84/galaxy1.webp", true, "BabySec", "Celeste", )
+console.log("--------------");
+console.log("--------------");
+console.log("--------------");
 console.log(prod1,prod2,prod3)
 console.log(prod2.title)
 console.log(prod3.onsale);
@@ -52,8 +57,22 @@ console.log(prod5.stock);
 prod5.sellUnits(13)
 console.log(prod5.stock);
 
-const products = [prod1,prod2,prod3,prod4]
+const products = [prod1,prod2,prod3,prod4,prod5]
 console.log(products);
 console.log(products[1]);
 console.log(products[products.length-1]);
-console.log(products[products.length-1].title);
+
+const prod6 = new Product("09562","Chizito",1,12,[],true,"Chips") 
+const prod7 = new Product("07548","Chettos",2,15,[],false,"Riverse")
+
+products.unshift(prod6)
+console.log(products);
+
+products.push(prod7)
+console.log(products);
+
+products.shift()
+console.log(products);
+
+products.pop()
+console.log(products);
